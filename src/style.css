@@ -1,0 +1,276 @@
+/* - Dark Blue (Dark Mode Elements): hsl(209, 23%, 22%)
+- Very Dark Blue (Dark Mode Background): hsl(207, 26%, 17%)
+- Very Dark Blue (Light Mode Text): hsl(200, 15%, 8%)
+- Dark Gray (Light Mode Input): hsl(0, 0%, 52%)
+- Very Light Gray (Light Mode Background): hsl(0, 0%, 98%)
+- White (Dark Mode Text & Light Mode Elements): hsl(0, 0%, 100%) */
+
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600&display=swap");
+
+:root {
+    --backColor: hsl(207, 26%, 17%);
+    --text-primary: hsl(0, 0%, 100%);
+    --element: hsl(209, 23%, 22%);
+    font-family: "Nunito Sans", sans-serif;
+}
+
+[data-theme="light"] {
+    --backColor: hsl(0, 0%, 91%);
+    --text-primary: hsl(200, 15%, 8%);
+    --element: hsl(0, 0%, 100%);
+}
+
+.root {
+    background-color: var(--backColor);
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    box-sizing: border-box;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol,
+ul {
+    list-style: none;
+}
+blockquote,
+q {
+    quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: "";
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.darkmode-icon {
+    height: 16px;
+    margin-right: 5px;
+}
+
+.darkmode-toggle {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+body {
+    height: 100vh;
+    color: var(--text-primary);
+}
+
+main {
+    background-color: var(--backColor);
+    height: 100vh;
+    padding: 25px 5%;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 5%;
+    color: var(--text-primary);
+    background-color: var(--element);
+}
+
+h1 {
+    font-size: 1.3rem;
+    font-weight: 800;
+}
+
+.filter-search {
+    background-color: var(--element);
+    border-style: none;
+    color: var(--text-primary);
+    width: 100%;
+    margin-right: 15px;
+}
+
+.filter-search:focus {
+    outline: 0;
+}
+
+.searchbar {
+    background-color: var(--element);
+    display: flex;
+
+    border-radius: 6px;
+    max-width: 400px;
+}
+
+.searchbar img {
+    height: 20px;
+    margin: 12px 15px;
+}
+
+.filters {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dropdown {
+    min-width: 180px;
+    position: relative;
+    font-size: 0.9rem;
+}
+
+.dropdown-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--element);
+    color: var(--text-primary);
+    padding: 12px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    height: 44px;
+}
+
+.dropdown-button svg {
+    fill: white;
+}
+
+.dropdown-items {
+    position: absolute;
+    background-color: var(--element);
+    color: var(--text-primary);
+    width: 100%;
+    margin-top: 5px;
+    border-radius: 6px;
+    padding: 7px 0px;
+}
+
+.dropdown-item {
+    padding: 13px 20px;
+    cursor: pointer;
+}
+
+.dropdown-item:hover {
+    background-color: hsl(209, 23%, 30%);
+}
+
+.arrow {
+    transform: rotate(90deg);
+    font-weight: 800;
+    font-family: Helvetica, sans-serif;
+    font-stretch: 1%;
+}
+
+.active {
+    transform: rotate(-90deg);
+}
