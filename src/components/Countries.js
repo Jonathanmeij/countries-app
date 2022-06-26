@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Country from "./Country";
 
 export default function Countries() {
     const [countries, setCountries] = useState([]);
@@ -18,11 +19,19 @@ export default function Countries() {
 
     useEffect(() => {
         fetchCountries();
+    }, []);
+
+    const countriesElements = countries.map((country) => {
+        return <Country countryData={country} />;
     });
 
     return (
         <div>
-            <h1>countru</h1>
+            {loading ? (
+                <div className="loading">loading</div>
+            ) : (
+                <div className="countries">{countriesElements}</div>
+            )}
         </div>
     );
 }

@@ -163,13 +163,12 @@ table {
 }
 
 body {
-    height: 100vh;
     color: var(--text-primary);
+    height: 100vh;
+    background-color: var(--backColor);
 }
 
 main {
-    background-color: var(--backColor);
-    height: 100vh;
     padding: 25px 5%;
 }
 
@@ -273,4 +272,49 @@ h1 {
 
 .active {
     transform: rotate(-90deg);
+}
+
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30vh;
+    height: 100%;
+    width: 100%;
+    font-size: 2rem;
+}
+
+.country img {
+    width: 17rem;
+}
+
+.country {
+    background-color: var(--element);
+    width: 17rem;
+    height: 24rem;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.country-info {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+h2 {
+    font-weight: 800;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.country-info span {
+    margin: 0.3rem 0px;
+}
+
+.countries {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
 }
