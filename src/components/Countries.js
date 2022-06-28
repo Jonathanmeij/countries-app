@@ -1,3 +1,4 @@
+import { nanoid } from "nanoid";
 import { useEffect, useState } from "react";
 import Country from "./Country";
 
@@ -21,20 +22,32 @@ export default function Countries(props) {
         fetchCountries();
     }, []);
 
+    //make filters stackable
+
     const countriesElements = countries.map((country) => {
         if (props.regionFilter !== "All") {
             if (country.region === props.regionFilter) {
-                return <Country countryData={country} />;
+                return <Country key={nanoid()} countryData={country} />;
             }
             return undefined;
         }
-        return <Country countryData={country} />;
+        if (props.searchBarValue !== "") {
+            if (
+                country.name.common
+                    .toLowerCase()
+                    .includes(props.searchBarValue.toLowerCase())
+            ) {
+                return <Country key={nanoid()} countryData={country} />;
+            }
+            return undefined;
+        }
+        return <Country key={nanoid()} countryData={country} />;
     });
 
     return (
         <div>
             {loading ? (
-                <div className="loading">loading</div>
+                <div className="loading">loading...</div>
             ) : (
                 <div className="countries">{countriesElements}</div>
             )}
