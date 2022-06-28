@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Country from "./Country";
 
-export default function Countries() {
+export default function Countries(props) {
     const [countries, setCountries] = useState([]);
     const [loading, setLoading] = useState(true);
 
@@ -22,6 +22,12 @@ export default function Countries() {
     }, []);
 
     const countriesElements = countries.map((country) => {
+        if (props.regionFilter !== "All") {
+            if (country.region === props.regionFilter) {
+                return <Country countryData={country} />;
+            }
+            return undefined;
+        }
         return <Country countryData={country} />;
     });
 

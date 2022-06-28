@@ -1,10 +1,10 @@
 import { nanoid } from "nanoid";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import arrow from "../images/arrow_drop_down_FILL0_wght400_GRAD0_opsz48.svg";
 
-export default function DropDown() {
-    const [value, setValue] = useState("Choose one");
-    const options = ["None", "Africa", "America", "Asia", "Europe", "Oceania"];
+export default function DropDown(props) {
+    const [value, setValue] = useState("All");
+    const options = ["All", "Africa", "Americas", "Asia", "Europe", "Oceania"];
     const [isActive, setIsActive] = useState(false);
 
     function handleClick(option) {
@@ -23,6 +23,10 @@ export default function DropDown() {
             </div>
         );
     });
+
+    useEffect(() => {
+        props.changeRegionFilter(value);
+    }, [value]);
 
     return (
         <div className="dropdown">

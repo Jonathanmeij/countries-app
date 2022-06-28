@@ -1,7 +1,7 @@
 import searchIcon from "../images/search_FILL0_wght400_GRAD200_opsz48.svg";
 import DropDown from "./DropDown";
 
-export default function Filters() {
+export default function Filters(props) {
     return (
         <div className="filters">
             <div className="searchbar">
@@ -12,7 +12,7 @@ export default function Filters() {
                     placeholder="Search for a country"
                 />
             </div>
-            <DropDown />
+            <DropDown changeRegionFilter={props.changeRegionFilter} />
         </div>
     );
 }
