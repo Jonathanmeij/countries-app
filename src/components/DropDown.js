@@ -1,6 +1,5 @@
 import { nanoid } from "nanoid";
 import { useEffect, useState } from "react";
-import arrow from "../images/arrow_drop_down_FILL0_wght400_GRAD0_opsz48.svg";
 
 export default function DropDown(props) {
     const [value, setValue] = useState("All");
@@ -26,7 +25,7 @@ export default function DropDown(props) {
 
     useEffect(() => {
         props.changeRegionFilter(value);
-    }, [value]);
+    }, [value, props.changeRegionFilter, props]);
 
     return (
         <div className="dropdown">

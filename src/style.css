@@ -331,3 +331,35 @@ h2 {
     gap: 25px;
     margin: 25px 0;
 }
+
+.placeholder {
+    animation: skeleton-loading 1s linear infinite alternate;
+    background-color: var(--element);
+    width: 17rem;
+    height: 24rem;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+@keyframes skeleton-loading {
+    0% {
+        background-color: var(--element);
+    }
+    100% {
+        background-color: var(--backColor);
+    }
+}
+
+.placeholderContainer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin: 25px 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
